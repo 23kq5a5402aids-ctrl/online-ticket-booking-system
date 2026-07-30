@@ -1,0 +1,637 @@
+/* ================================
+   GLOBAL RESET
+================================ */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: radial-gradient(circle at top, #2b0a0a, #080808 60%);
+    color: #fff;
+    min-height: 100vh;
+}
+
+
+/* ================================
+   NAVBAR
+================================ */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 45px;
+
+    position: sticky;
+    top: 0;
+    z-index: 999;
+
+    background: rgba(15,15,15,0.75);
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+
+    margin-right: 25px;
+
+    font-size: 17px;
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+
+.nav-links a:hover {
+    color: #ff4757;
+}
+
+
+.login-btn {
+
+    background: #ff4757;
+
+    color: white;
+
+    border: none;
+
+    padding: 10px 22px;
+
+    border-radius: 30px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.login-btn:hover {
+
+    background: white;
+
+    color: #ff4757;
+
+    transform: translateY(-3px);
+
+}
+
+
+
+/* ================================
+   LOGIN / SIGNUP FORM
+================================ */
+
+
+.form-container {
+
+    width: 400px;
+
+    margin: 50px auto;
+
+    padding: 40px;
+
+
+    background: rgba(255,255,255,0.08);
+
+    backdrop-filter: blur(20px);
+
+
+    border: 1px solid rgba(255,255,255,0.15);
+
+    border-radius: 20px;
+
+
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+
+
+    display: none;
+
+}
+
+
+
+.form-container.active {
+
+    display: block;
+
+}
+
+
+
+.form-container h2 {
+
+    text-align: center;
+
+    margin-bottom: 25px;
+
+    color: #ff4757;
+
+    font-size: 30px;
+
+}
+
+
+
+.form-container input {
+
+    width: 100%;
+
+    padding: 14px;
+
+    margin-bottom: 18px;
+
+
+    background: #151515;
+
+    color: white;
+
+
+    border: 1px solid #333;
+
+    border-radius: 10px;
+
+
+    font-size: 16px;
+
+}
+
+
+
+.form-container input:focus {
+
+    outline: none;
+
+    border-color: #ff4757;
+
+    box-shadow: 0 0 12px #ff4757;
+
+}
+
+
+
+.form-container button {
+
+
+    width:100%;
+
+    padding:14px;
+
+    background:#ff4757;
+
+    color:white;
+
+    border:none;
+
+    border-radius:10px;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+
+.form-container button:hover {
+
+    background:white;
+
+    color:#ff4757;
+
+}
+
+
+
+.form-toggle {
+
+
+    margin-top:20px;
+
+    text-align:center;
+
+    color:#ffb300;
+
+    cursor:pointer;
+
+}
+
+
+
+/* ================================
+   SECTIONS
+================================ */
+
+
+.container {
+
+    max-width:1200px;
+
+    margin:auto;
+
+}
+
+
+
+.section {
+
+
+    padding:30px 50px;
+
+    margin-bottom:50px;
+
+}
+
+
+
+.section h2 {
+
+    font-size:34px;
+
+    margin-bottom:30px;
+
+    color:white;
+
+}
+
+
+
+.section h2::after {
+
+    content:"";
+
+    display:block;
+
+    width:90px;
+
+    height:4px;
+
+    margin-top:10px;
+
+    background:#ff4757;
+
+    border-radius:20px;
+
+}
+
+
+
+/* ================================
+   MOVIE / EVENT CARDS
+================================ */
+
+
+.grid {
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(auto-fill,minmax(190px,1fr));
+
+    gap:25px;
+
+}
+
+.card {
+
+    background:#171717;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.5);
+
+}
+
+.card:hover {
+
+    transform:translateY(-12px);
+
+    box-shadow:0 20px 40px rgba(255,71,87,.35);
+
+}
+
+
+.card img {
+
+    width:100%;
+
+    height:260px;
+
+    object-fit:cover;
+
+}
+
+
+
+.info {
+
+    padding:15px;
+
+    text-align:center;
+
+    font-weight:600;
+
+    font-size:16px;
+
+}
+
+.card button {
+
+    width:100%;
+
+    padding:13px;
+
+    background:#ff4757;
+
+    color:white;
+
+    border:none;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.card button:hover {
+
+    background:white;
+
+    color:#ff4757;
+
+}
+
+
+/* ================================
+   SEAT SELECTION
+================================ */
+
+
+.seatPage {
+
+    width:600px;
+
+    margin:50px auto;
+
+    padding:35px;
+
+    background:#171717;
+
+    border-radius:20px;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.6);
+
+    display:none;
+
+}
+
+
+.seatPage.active,
+
+#paymentPage.active {
+
+    display:block;
+
+}
+
+.seatPage h2,
+
+#paymentPage h2 {
+
+    text-align:center;
+
+    color:#ff4757;
+
+    margin-bottom:25px;
+
+}
+
+.seat-grid {
+
+    display:grid;
+
+    grid-template-columns:repeat(6,1fr);
+
+    gap:15px;
+
+}
+
+
+.seat {
+
+    height:45px;
+
+    background:#333;
+
+    border-radius:10px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+.seat:hover {
+
+    background:#ffb300;
+
+    color:black;
+
+    transform:scale(1.1);
+
+}
+
+.seat.selected {
+
+    background:#ff4757;
+
+    color:white;
+
+}
+
+/* ================================
+   PAYMENT PAGE
+================================ */
+
+#paymentPage {
+
+    width:600px;
+
+    margin:50px auto;
+
+    padding:35px;
+
+    background:#171717;
+
+    border-radius:20px;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.6);
+
+    display:none;
+
+}
+
+#paymentPage input,
+
+#paymentPage select {
+
+    width:100%;
+
+    padding:14px;
+
+    margin-bottom:18px;
+
+    background:#111;
+
+    color:white;
+
+    border:1px solid #333;
+
+    border-radius:10px;
+
+}
+
+#paymentPage button {
+
+
+    width:100%;
+
+    padding:15px;
+
+    background:#ff4757;
+
+    color:white;
+
+    border:none;
+
+    border-radius:10px;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+}
+
+#paymentPage button:hover {
+
+
+    background:white;
+
+
+    color:#ff4757;
+
+}
+
+/* ================================
+   ANIMATIONS
+================================ */
+
+button {
+
+    transition:.3s;
+
+}
+
+
+button:hover {
+
+    transform:translateY(-3px);
+
+}
+
+/* ================================
+   SCROLL BAR
+================================ */
+
+::-webkit-scrollbar {
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track {
+
+    background:#111;
+
+}
+
+::-webkit-scrollbar-thumb {
+
+
+    background:#ff4757;
+
+
+    border-radius:20px;
+
+}
+
+/* ================================
+   RESPONSIVE DESIGN
+================================ */
+
+@media(max-width:700px){
+
+nav {
+
+    padding:15px;
+
+}
+
+.section {
+
+    padding:20px;
+
+}
+
+.form-container,
+
+.seatPage,
+
+#paymentPage {
+
+
+    width:90%;
+
+}
+
+.seat-grid {
+
+
+    grid-template-columns:repeat(4,1fr);
+
+}
+
+}

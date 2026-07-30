@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book My Show Clone - Final</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-links">
+            <a href="#" onclick="showCategory('movies')">Movies</a>
+            <a href="#" onclick="showCategory('music')">Music</a>
+            <a href="#" onclick="showCategory('ipl')">IPL</a>
+        </div>
+        <button class="login-btn" onclick="logout()">Logout</button>
+    </nav>
+
+    <div class="form-container" id="loginForm">
+        <h2>Login</h2>
+        <input type="text" id="loginUser" placeholder="Username" autocomplete="off" />
+        <input type="password" id="loginPass" placeholder="Password" autocomplete="off" />
+        <button onclick="login()">Login</button>
+        <div class="form-toggle">Don't have an account? <span onclick="toggleForms()">Sign Up</span></div>
+    </div>
+
+    <div class="form-container" id="signupForm">
+        <h2>Sign Up</h2>
+        <input type="text" id="signupUser" placeholder="Username" autocomplete="off" />
+        <input type="password" id="signupPass" placeholder="Password" autocomplete="off" />
+        <input type="password" id="confirmPass" placeholder="Confirm Password" autocomplete="off" />
+        <button onclick="signup()">Sign Up</button>
+        <div class="form-toggle">Already have an account? <span onclick="toggleForms()">Login</span></div>
+    </div>
+
+    <div class="container" id="mainContent" style="display: none;">
+        <div class="section" id="movies">
+            <h2>Movies</h2>
+            <div class="grid" id="moviesGrid"></div>
+        </div>
+        <div class="section" id="music">
+            <h2>Music</h2>
+            <div class="grid" id="musicGrid"></div>
+        </div>
+        <div class="section" id="ipl">
+            <h2>IPL</h2>
+            <div class="grid" id="iplGrid"></div>
+        </div>
+    </div>
+
+    <div class="seatPage" id="seatPage">
+        <h2>Select Your Seats</h2>
+        <div class="seat-grid" id="seatGrid"></div>
+        <button class="seat-button" onclick="goToPayment()">Proceed to Payment</button>
+        <button class="seat-button" style="margin-top: 10px; background: #444;" onclick="cancelBooking()">Cancel</button>
+    </div>
+
+    <div class="paymentPage" id="paymentPage">
+        <h2>Payment Page</h2>
+        <label for="paymentMethod">Choose Payment Method:</label>
+        <select id="paymentMethod">
+            <option value="credit">Credit Card</option>
+            <option value="debit">Debit Card</option>
+            <option value="upi">UPI</option>
+            <option value="netbanking">Net Banking</option>
+        </select>
+
+        <input type="text" id="cardNumber" placeholder="Card Number" autocomplete="off" />
+        <input type="text" id="cardName" placeholder="Name on Card" autocomplete="off" />
+        <input type="month" id="cardExpiry" />
+        <input type="text" id="cardCvv" placeholder="CVV" maxlength="3" autocomplete="off" />
+        <input type="password" id="paymentPass" placeholder="Password" autocomplete="off" />
+
+        <button onclick="finishBooking()">Pay & Book</button>
+        <button style="margin-top:10px; background:#444;" onclick="cancelBooking()">Cancel</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
